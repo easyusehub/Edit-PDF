@@ -36,6 +36,19 @@ header{
     cursor:pointer;
     margin:20px 0;
 }
+#widgetArea{
+    width:100%;
+    min-height:600px;
+    background:#fff;
+    border:2px dashed #ccc;
+    border-radius:8px;
+    margin-top:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#999;
+    font-size:18px;
+}
 .buttons{
     margin-top:10px;
 }
@@ -69,13 +82,13 @@ header{
 Upload File
 </label>
 
-<div id="widgetArea" style="margin-top:30px;">
-<!-- Widget area kept for design consistency -->
+<div id="widgetArea">
+<!-- Widget style mimic -->
+<i>Widget Style Area – PDF24 Edit PDF will open in new tab</i>
 </div>
 
 <div id="ad-middle">Middle Ad Placeholder</div>
 
-<!-- All PDF Tools + Home buttons -->
 <div class="buttons">
 <button class="tools" onclick="window.location.href='https://easyusehub.blogspot.com/p/free-pdf-tools-easyusehub.html?m=1'">
 All PDF Tools
@@ -89,7 +102,6 @@ Home
 
 <script>
 function openPDF24Edit(){
-    // Open PDF24 Edit page in new tab
     window.open("https://tools.pdf24.org/en/edit-pdf", "_blank");
 }
 </script>
