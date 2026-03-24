@@ -65,11 +65,13 @@ header{
 
 <p>Click below to edit your PDF file</p>
 
-<label class="upload-btn" onclick="loadEditPdfWidget()">
+<label class="upload-btn" onclick="openPDF24Edit()">
 Upload File
 </label>
 
-<div id="widgetArea" style="margin-top:30px;"></div>
+<div id="widgetArea" style="margin-top:30px;">
+<!-- Widget area kept for design consistency -->
+</div>
 
 <div id="ad-middle">Middle Ad Placeholder</div>
 
@@ -85,22 +87,10 @@ Home
 
 </div>
 
-<!-- PDF24 official widget -->
-<script src="https://tools.pdf24.org/static/js/widget.js"></script>
 <script>
-function loadEditPdfWidget(){
-    if(typeof pdf24 === "undefined"){
-        alert("Tool loading... Please click again");
-        return;
-    }
-
-    pdf24.loadWidget('edit-pdf', {
-        containerId: 'widgetArea',
-        langCode: 'en',
-        widgetConfig: {
-            theme: 'lightTheme'
-        }
-    });
+function openPDF24Edit(){
+    // Open PDF24 Edit page in new tab
+    window.open("https://tools.pdf24.org/en/edit-pdf", "_blank");
 }
 </script>
 
