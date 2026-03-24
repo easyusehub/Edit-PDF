@@ -36,19 +36,6 @@ header{
     cursor:pointer;
     margin:20px 0;
 }
-#widgetArea{
-    width:100%;
-    min-height:600px;
-    background:#fff;
-    border:2px dashed #ccc;
-    border-radius:8px;
-    margin-top:20px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#999;
-    font-size:18px;
-}
 .buttons{
     margin-top:10px;
 }
@@ -62,6 +49,7 @@ header{
 }
 .tools{ background:#10b981; }
 .home{ background:#f59e0b; }
+.back{ background:#6b7280; }
 </style>
 </head>
 <body>
@@ -78,17 +66,13 @@ header{
 
 <p>Click below to edit your PDF file</p>
 
-<label class="upload-btn" onclick="openPDF24Edit()">
+<label class="upload-btn" onclick="redirectToEditPDF()">
 Upload File
 </label>
 
-<div id="widgetArea">
-<!-- Widget style mimic -->
-<i>Widget Style Area – PDF24 Edit PDF will open in new tab</i>
-</div>
-
 <div id="ad-middle">Middle Ad Placeholder</div>
 
+<!-- All PDF Tools + Home + Back buttons -->
 <div class="buttons">
 <button class="tools" onclick="window.location.href='https://easyusehub.blogspot.com/p/free-pdf-tools-easyusehub.html?m=1'">
 All PDF Tools
@@ -96,13 +80,21 @@ All PDF Tools
 <button class="home" onclick="window.location.href='https://easyusehub.blogspot.com/?m=1'">
 Home
 </button>
+<button class="back" onclick="goBack()">
+Back
+</button>
 </div>
 
 </div>
 
 <script>
-function openPDF24Edit(){
+function redirectToEditPDF(){
+    // Open PDF24 Edit PDF page in new tab
     window.open("https://tools.pdf24.org/en/edit-pdf", "_blank");
+}
+
+function goBack(){
+    window.history.back();
 }
 </script>
 
