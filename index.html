@@ -36,53 +36,6 @@ header{
     cursor:pointer;
     margin:20px 0;
 }
-#widgetArea{
-    width:100%;
-    min-height:600px;
-    background:#fff;
-    border:2px dashed #ccc;
-    border-radius:8px;
-    margin-top:20px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#999;
-    font-size:18px;
-    position:relative;
-}
-.popup-overlay{
-    position:absolute;
-    top:0; left:0;
-    width:100%; height:100%;
-    background:rgba(0,0,0,0.5);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    display:none;
-}
-.popup-window{
-    width:90%; height:90%;
-    background:#fff;
-    border-radius:8px;
-    position:relative;
-    overflow:hidden;
-}
-.popup-window iframe{
-    width:100%;
-    height:100%;
-    border:none;
-}
-.popup-close{
-    position:absolute;
-    top:10px; right:10px;
-    background:#f59e0b;
-    color:#fff;
-    border:none;
-    border-radius:5px;
-    padding:8px 12px;
-    cursor:pointer;
-    z-index:10;
-}
 .buttons{
     margin-top:10px;
 }
@@ -96,7 +49,6 @@ header{
 }
 .tools{ background:#10b981; }
 .home{ background:#f59e0b; }
-.back{ background:#6b7280; }
 </style>
 </head>
 <body>
@@ -113,25 +65,13 @@ header{
 
 <p>Click below to edit your PDF file</p>
 
-<label class="upload-btn" onclick="openPopup()">
+<label class="upload-btn" onclick="redirectToEditPDF()">
 Upload File
 </label>
 
-<div id="widgetArea">
-<i>Widget-style area – PDF24 / Sejda editor will open here in popup</i>
-
-<div class="popup-overlay" id="popup">
-    <div class="popup-window">
-        <button class="popup-close" onclick="closePopup()">Back</button>
-        <iframe id="editorFrame" src=""></iframe>
-    </div>
-</div>
-
-</div>
-
 <div id="ad-middle">Middle Ad Placeholder</div>
 
-<!-- All PDF Tools + Home + Back buttons -->
+<!-- All PDF Tools + Home buttons -->
 <div class="buttons">
 <button class="tools" onclick="window.location.href='https://easyusehub.blogspot.com/p/free-pdf-tools-easyusehub.html?m=1'">
 All PDF Tools
@@ -139,26 +79,14 @@ All PDF Tools
 <button class="home" onclick="window.location.href='https://easyusehub.blogspot.com/?m=1'">
 Home
 </button>
-<button class="back" onclick="closePopup()">
-Back
-</button>
 </div>
 
 </div>
 
 <script>
-function openPopup(){
-    // PDF24 / Sejda editor URL
-    const editorURL = "https://www.sejda.com/pdf-editor";
-    const iframe = document.getElementById('editorFrame');
-    iframe.src = editorURL;
-    document.getElementById('popup').style.display = 'flex';
-}
-
-function closePopup(){
-    const iframe = document.getElementById('editorFrame');
-    iframe.src = "";
-    document.getElementById('popup').style.display = 'none';
+function redirectToEditPDF(){
+    // Directly redirect user to PDF24 Edit PDF page
+    window.location.href = "https://tools.pdf24.org/en/edit-pdf";
 }
 </script>
 
