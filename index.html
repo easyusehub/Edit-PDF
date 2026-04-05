@@ -7,81 +7,44 @@
 <style>
 /* --- Fix Background & Side Scrolling --- */
 html, body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fa;
-    text-align: center;
-    overflow-x: hidden; /* সাইডে সরা বন্ধ করবে */
-    touch-action: manipulation; /* আনওয়ান্টেড জুম/প্যান বন্ধ করবে */
+    margin: 0; padding: 0; font-family: Arial, sans-serif; background: #f5f7fa;
+    text-align: center; overflow-x: hidden; touch-action: manipulation;
 }
-
-header {
-    background: #fff;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,.1);
-}
-
-.container {
-    width: 100%;
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 0 15px;
-    box-sizing: border-box; /* প্যাডিং দিলেও উইডথ বাড়বে না */
-}
+header { background: #fff; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,.1); }
+.container { width: 100%; max-width: 900px; margin: 15px auto; padding: 0 12px; box-sizing: border-box; }
 
 /* --- 🔥 Large Premium Push Notification --- */
 #push-notification {
-    position: fixed; 
-    bottom: -150px; 
-    left: 50%;
-    transform: translateX(-50%); /* সেন্টারে বড় করে দেখাবে */
-    width: 90%; 
-    max-width: 350px; 
-    background: #fff; 
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
-    display: flex; 
-    align-items: center; 
-    padding: 15px;
-    z-index: 10000; 
-    transition: bottom 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); 
-    cursor: pointer; 
-    border-top: 5px solid #2563eb; 
-    text-align: left;
+    position: fixed; bottom: -160px; left: 50%; transform: translateX(-50%);
+    width: 92%; max-width: 360px; background: #fff; border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25); display: flex; align-items: center; 
+    padding: 15px; z-index: 10000; transition: bottom 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); 
+    cursor: pointer; border-top: 5px solid #2563eb; text-align: left;
 }
 #push-notification.active { bottom: 20px; }
-#push-notification img { width: 50px; height: 50px; border-radius: 8px; margin-right: 15px; }
-.push-text b { font-size: 15px; color: #222; display: block; margin-bottom: 2px; }
-.push-text p { font-size: 12px; color: #666; margin: 0; line-height: 1.4; }
-.close-push { position: absolute; top: 5px; right: 10px; font-size: 20px; cursor: pointer; color: #aaa; }
+#push-notification img { width: 45px; height: 45px; border-radius: 8px; margin-right: 12px; }
+.push-text b { font-size: 14px; color: #222; display: block; margin-bottom: 2px; }
+.push-text p { font-size: 11px; color: #666; margin: 0; line-height: 1.4; }
+.close-push { position: absolute; top: 5px; right: 10px; font-size: 22px; cursor: pointer; color: #aaa; }
 
-/* --- EasyUseHub Custom Ad Bridges --- */
+/* --- EasyUseHub Custom Ad Bridges (3 Slot System) --- */
 .custom-ad-bridge {
     background: linear-gradient(135deg, #1e3a8a, #2563eb);
-    color: white; padding: 18px; margin: 15px auto; border-radius: 12px; cursor: pointer;
-    width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.2s; display: inline-block;
-    box-sizing: border-box;
+    color: white; padding: 16px; margin: 12px auto; border-radius: 10px; cursor: pointer;
+    width: 100%; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.2s; 
+    display: inline-block; box-sizing: border-box;
 }
-.ad-title { font-size: 17px; font-weight: bold; margin-bottom: 5px; display: block; }
-.ad-btn { background: #fbbf24; color: #000; padding: 7px 18px; border-radius: 6px; font-weight: bold; text-transform: uppercase; display: inline-block; font-size: 11px; margin-top: 8px; border: none; }
+.ad-title { font-size: 16px; font-weight: bold; margin-bottom: 4px; display: block; }
+.ad-btn { background: #fbbf24; color: #000; padding: 6px 15px; border-radius: 5px; font-weight: bold; text-transform: uppercase; display: inline-block; font-size: 10px; margin-top: 6px; border: none; }
 
 .upload-btn {
-    display: inline-block;
-    padding: 18px 40px;
-    background: #2563eb;
-    color: #fff;
-    border-radius: 8px;
-    cursor: pointer;
-    margin: 25px 0;
-    font-weight: bold;
-    font-size: 18px;
-    border: none;
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+    display: inline-block; padding: 16px 35px; background: #2563eb; color: #fff;
+    border-radius: 8px; cursor: pointer; margin: 20px 0; font-weight: bold;
+    font-size: 17px; border: none; box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
 }
 
-.buttons { margin: 20px 0 60px 0; }
-.buttons button { padding: 12px 24px; margin: 5px; border: none; border-radius: 8px; cursor: pointer; color: #fff; font-weight: bold; font-size: 14px; }
+.buttons { margin: 15px 0 70px 0; }
+.buttons button { padding: 12px 22px; margin: 5px; border: none; border-radius: 6px; cursor: pointer; color: #fff; font-weight: bold; font-size: 13px; }
 .tools { background: #10b981; }
 .home { background: #f59e0b; }
 </style>
@@ -93,23 +56,21 @@ header {
     <img src="https://cdn-icons-png.flaticon.com/512/5968/5968313.png" alt="icon">
     <div class="push-text">
         <b>🚀 46+ Premium Web Tools</b>
-        <p>PDF, Calculators & More. Fast, Free & Secure by EasyUseHub.</p>
+        <p>Best Free PDF Tools, Smart Calculators & Image Tools at EasyUseHub.</p>
     </div>
 </div>
 
-<header>
-    <h2>Edit PDF – EasyUseHub</h2>
-</header>
+<header><h2>Edit PDF – EasyUseHub</h2></header>
 
 <div class="container">
 
     <div class="custom-ad-bridge" onclick="window.open('https://easyusehub.blogspot.com', '_blank')">
         <span class="ad-title">🚀 Unlock 46+ Premium Free Tools</span>
-        <p style="font-size: 12px; margin: 0; opacity: 0.9;">Best PDF Editor, 16+ Smart Calculators & Image Tools</p>
+        <p style="font-size: 11px; margin: 0; opacity: 0.9;">100% Free PDF, Image & Calculation Tools</p>
         <button class="ad-btn">Open EasyUseHub</button>
     </div>
 
-    <p style="margin-top: 25px; font-weight: bold; color: #444; font-size: 16px;">Click below to edit your PDF file content</p>
+    <p style="margin-top: 20px; font-weight: bold; color: #444;">Click below to edit your PDF file content</p>
 
     <button class="upload-btn" onclick="redirectToEditPDF()">
         📁 Upload & Edit PDF
@@ -117,8 +78,14 @@ header {
 
     <div class="custom-ad-bridge" style="background: linear-gradient(135deg, #7c3aed, #9333ea);" onclick="window.open('https://easyusehub.blogspot.com/p/ultimate-calculators-hub.html', '_blank')">
         <span class="ad-title">🔢 Smart Online Calculators</span>
-        <p style="font-size: 12px; margin: 0; opacity: 0.9;">EMI, Age & Health Calculators - All in One Hub</p>
+        <p style="font-size: 11px; margin: 0; opacity: 0.9;">Loan EMI, Age, BMI & Percentage Tools</p>
         <button class="ad-btn" style="background: #fff; color: #7c3aed;">Try Now</button>
+    </div>
+
+    <div class="custom-ad-bridge" style="background: linear-gradient(135deg, #059669, #10b981);" onclick="window.open('https://easyusehub.blogspot.com/p/image-compressor.html', '_blank')">
+        <span class="ad-title">⚡ High-Speed Image Compressor</span>
+        <p style="font-size: 11px; margin: 0; opacity: 0.9;">Compress Images Without Losing Quality</p>
+        <button class="ad-btn" style="background: #fff; color: #059669;">Compress Now</button>
     </div>
 
     <div class="buttons">
@@ -129,11 +96,10 @@ header {
 </div>
 
 <script>
-// পেজ লোড হওয়ার ২ সেকেন্ড পর বড় পুশ অ্যাডটা আসবে
 window.onload = function() {
     setTimeout(function() {
         document.getElementById('push-notification').classList.add('active');
-    }, 2000);
+    }, 1500);
 };
 
 function redirectToEditPDF(){
