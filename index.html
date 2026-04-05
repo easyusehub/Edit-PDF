@@ -10,6 +10,7 @@ body{
     font-family:Arial, sans-serif;
     background:#f5f7fa;
     text-align:center;
+    overflow-x: hidden;
 }
 header{
     background:#fff;
@@ -21,12 +22,28 @@ header{
     max-width:900px;
     margin:30px auto;
 }
-#ad-top, #ad-middle{
-    background:#eee;
-    padding:20px;
-    margin:20px 0;
-    border-radius:8px;
+
+/* --- 🔥 EasyUseHub Custom Ad Bridges --- */
+.custom-ad-bridge {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white; padding: 15px; margin: 15px auto; border-radius: 10px; cursor: pointer;
+    width: 100%; max-width: 600px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.2s; display: inline-block;
 }
+.ad-title { font-size: 16px; font-weight: bold; margin-bottom: 3px; display: block; }
+.ad-btn { background: #fbbf24; color: #000; padding: 5px 12px; border-radius: 4px; font-weight: bold; text-transform: uppercase; display: inline-block; font-size: 10px; margin-top: 5px; }
+
+/* --- 🔥 Compact Push Notification --- */
+#push-notification {
+    position: fixed; bottom: -120px; right: 20px; width: 260px; background: #fff; border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); display: flex; align-items: center; padding: 8px 12px;
+    z-index: 10000; transition: bottom 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); cursor: pointer; border-left: 4px solid #2563eb; text-align: left;
+}
+#push-notification.active { bottom: 20px; }
+#push-notification img { width: 35px; height: 35px; border-radius: 6px; margin-right: 10px; }
+.push-text b { font-size: 12px; color: #222; display: block; }
+.push-text p { font-size: 10px; color: #666; margin: 0; }
+.close-push { position: absolute; top: 2px; right: 6px; font-size: 16px; cursor: pointer; color: #aaa; }
+
 .upload-btn{
     display:inline-block;
     padding:15px 30px;
@@ -35,9 +52,11 @@ header{
     border-radius:6px;
     cursor:pointer;
     margin:20px 0;
+    font-weight: bold;
 }
 .buttons{
     margin-top:10px;
+    margin-bottom: 50px;
 }
 .buttons button{
     padding:10px 20px;
@@ -46,6 +65,7 @@ header{
     border-radius:5px;
     cursor:pointer;
     color:#fff;
+    font-weight: bold;
 }
 .tools{ background:#10b981; }
 .home{ background:#f59e0b; }
@@ -53,25 +73,42 @@ header{
 </head>
 <body>
 
+<div id="push-notification" onclick="window.open('https://easyusehub.blogspot.com', '_blank')">
+    <span class="close-push" onclick="event.stopPropagation(); document.getElementById('push-notification').classList.remove('active');">&times;</span>
+    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968313.png" alt="icon">
+    <div class="push-text"><b>🚀 46+ Premium Tools Ready!</b><p>All PDF Tools, Calculators & More - 100% Free</p></div>
+</div>
+
 <header>
 <h2>Edit PDF – EasyUseHub</h2>
 </header>
 
 <div class="container">
 
-<div id="ad-top">
-<strong>Edit Your PDF</strong> – Modify PDF content easily and securely.
+<div class="custom-ad-bridge" onclick="window.open('https://easyusehub.blogspot.com', '_blank')">
+    <span class="ad-title">🚀 Try 46+ Premium Free Web Tools!</span>
+    <p style="font-size: 11px; margin: 2px 0; opacity: 0.9;">All PDF Tools, 16+ Calculators, Age & BMI Tracker - 100% Free</p>
+    <div class="ad-btn">Open EasyUseHub</div>
 </div>
 
-<p>Click below to edit your PDF file</p>
+<p style="margin-top: 20px; font-weight: bold; color: #444;">Click below to edit your PDF file</p>
 
 <label class="upload-btn" onclick="redirectToEditPDF()">
-Upload File
+    📁 Upload & Edit File
 </label>
 
-<div id="ad-middle">Middle Ad Placeholder</div>
+<div class="custom-ad-bridge" style="background: linear-gradient(135deg, #7c3aed, #9333ea);" onclick="window.open('https://easyusehub.blogspot.com/p/ultimate-calculators-hub.html', '_blank')">
+    <span class="ad-title">🔢 Smart Online Calculators</span>
+    <p style="font-size: 11px; margin: 2px 0; opacity: 0.9;">Loan EMI, Age, BMI & Percentage Calculators - All in One Hub</p>
+    <div class="ad-btn" style="background: #fff; color: #7c3aed;">Try Now</div>
+</div>
 
-<!-- All PDF Tools + Home buttons -->
+<div class="custom-ad-bridge" style="background: linear-gradient(135deg, #059669, #10b981);" onclick="window.open('https://easyusehub.blogspot.com/p/image-compressor.html', '_blank')">
+    <span class="ad-title">⚡ High-Speed Image Compressor</span>
+    <p style="font-size: 11px; margin: 2px 0; opacity: 0.9;">Optimize images without losing quality at EasyUseHub</p>
+    <div class="ad-btn" style="background: #fff; color: #059669;">Compress Now</div>
+</div>
+
 <div class="buttons">
 <button class="tools" onclick="window.location.href='https://easyusehub.blogspot.com/p/free-pdf-tools-online.html'">
 All PDF Tools
@@ -85,8 +122,13 @@ Home
 
 <script>
 function redirectToEditPDF(){
-    // Directly redirect user to PDF24 Edit PDF page
-    window.location.href = "https://tools.pdf24.org/en/edit-pdf";
+    // Show notification before redirecting
+    document.getElementById('push-notification').classList.add('active');
+    
+    // Small delay to let user see branding before they leave the site
+    setTimeout(function() {
+        window.location.href = "https://tools.pdf24.org/en/edit-pdf";
+    }, 800);
 }
 </script>
 
